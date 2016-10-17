@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CHParallaxHeaderView_Example' do
+  pod 'CHParallaxHeaderView', :path => '../'
+
+  target 'CHParallaxHeaderView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
