@@ -18,10 +18,7 @@
                             <rect key="frame" x="0.0" y="64" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="apple_watch2" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-3d-HCj">
-                                    <frame key="frameInset" width="375" height="160"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple_watch2" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-3d-HCj"/>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="ZyW-Ye-dKH">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="64" id="qQd-Gd-guc"/>
@@ -31,8 +28,12 @@
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="nyT-3d-HCj" secondAttribute="trailing" id="9AR-zA-My1"/>
+                                <constraint firstAttribute="bottom" secondItem="nyT-3d-HCj" secondAttribute="bottom" id="Xuc-ML-vuO"/>
                                 <constraint firstItem="ZyW-Ye-dKH" firstAttribute="centerY" secondItem="H3z-yy-Iz7" secondAttribute="centerY" id="aVV-2v-FUJ"/>
                                 <constraint firstItem="ZyW-Ye-dKH" firstAttribute="centerX" secondItem="H3z-yy-Iz7" secondAttribute="centerX" id="dFO-br-7wj"/>
+                                <constraint firstItem="nyT-3d-HCj" firstAttribute="leading" secondItem="H3z-yy-Iz7" secondAttribute="leading" id="lND-ez-anl"/>
+                                <constraint firstItem="nyT-3d-HCj" firstAttribute="top" secondItem="H3z-yy-Iz7" secondAttribute="top" id="vcx-NU-hrl"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -76,7 +77,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="WyF-Nn-9wA" userLabel="headerView">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple_watch2" translatesAutoresizingMaskIntoConstraints="NO" id="RpW-Sn-eac"/>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="96o-5J-JN6">
@@ -88,12 +89,12 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="RpW-Sn-eac" secondAttribute="trailing" id="1zQ-dJ-VqJ"/>
-                                        <constraint firstItem="RpW-Sn-eac" firstAttribute="leading" secondItem="WyF-Nn-9wA" secondAttribute="leading" id="2aN-3F-hLC"/>
-                                        <constraint firstAttribute="bottom" secondItem="RpW-Sn-eac" secondAttribute="bottom" id="3wt-fn-1nz"/>
+                                        <constraint firstItem="RpW-Sn-eac" firstAttribute="top" secondItem="WyF-Nn-9wA" secondAttribute="top" id="68P-A3-bdN"/>
                                         <constraint firstItem="96o-5J-JN6" firstAttribute="centerX" secondItem="WyF-Nn-9wA" secondAttribute="centerX" id="9HD-vf-Vzp"/>
+                                        <constraint firstAttribute="trailing" secondItem="RpW-Sn-eac" secondAttribute="trailing" id="TzZ-4h-Rkf"/>
                                         <constraint firstAttribute="bottom" secondItem="96o-5J-JN6" secondAttribute="bottom" constant="20" id="VP7-Ny-9Fw"/>
-                                        <constraint firstItem="RpW-Sn-eac" firstAttribute="top" secondItem="WyF-Nn-9wA" secondAttribute="top" id="eWE-Pl-dSt"/>
+                                        <constraint firstItem="RpW-Sn-eac" firstAttribute="leading" secondItem="WyF-Nn-9wA" secondAttribute="leading" id="bjm-S5-XDa"/>
+                                        <constraint firstAttribute="bottom" secondItem="RpW-Sn-eac" secondAttribute="bottom" id="w2k-AU-QI0"/>
                                     </constraints>
                                 </view>
                                 <prototypes>

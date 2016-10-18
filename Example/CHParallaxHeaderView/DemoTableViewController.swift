@@ -15,6 +15,7 @@ class DemoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.tableView.layoutIfNeeded()
         self.navigationItem.title = "视差缩放View"
     }
 
@@ -22,13 +23,13 @@ class DemoTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         //添加缩放视差效果并跟踪着哪个View
         self.imageViewHeader.ch_addParallax(by: self.tableView)
-        //self.imageViewLogo.ch_addParallax(by: self.tableView, rate: 0.5)
+        self.imageViewLogo.ch_addParallax(by: self.tableView, rate: 0.5)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.imageViewHeader.ch_removeParallax()
-        //self.imageViewLogo.ch_removeParallax()
+        self.imageViewLogo.ch_removeParallax()
     }
 
     // MARK: - Table view data source

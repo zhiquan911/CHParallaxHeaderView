@@ -1,5 +1,5 @@
 PODS:
-  - CHParallaxHeaderView (0.1.0)
+  - CHParallaxHeaderView (1.0.0)
 
 DEPENDENCIES:
   - CHParallaxHeaderView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CHParallaxHeaderView: fc55ca2f9991680c2ab3454ac07bcadbe7365599
+  CHParallaxHeaderView: 64c23517dc8ed7a1d459a76f1ea307160cc76fe0
 
 PODFILE CHECKSUM: fc8f7143a0005fec509b0d61dd03fcd12bcaa635
 

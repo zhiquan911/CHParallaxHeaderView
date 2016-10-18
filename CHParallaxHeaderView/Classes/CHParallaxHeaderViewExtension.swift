@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - 扩展UIView，增开绑定ScrollView控制UIView视差缩放
-public extension UIView {
+extension UIView {
     
     
     /**************** 通过AssociatedKeys的值定义成员变量 ****************/
@@ -29,7 +29,7 @@ public extension UIView {
             objc_setAssociatedObject(
                 self,
                 &AssociatedKeys.ch_scrollView,
-                newValue as UIScrollView?,
+                newValue,
                 objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC
             )
         }
@@ -44,7 +44,7 @@ public extension UIView {
             objc_setAssociatedObject(
                 self,
                 &AssociatedKeys.ch_fixFrame,
-                newValue as! CGRect,
+                newValue,
                 objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC
             )
         }
@@ -59,11 +59,12 @@ public extension UIView {
             objc_setAssociatedObject(
                 self,
                 &AssociatedKeys.ch_parallaxRate,
-                newValue as! CGFloat,
+                newValue,
                 objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC
             )
         }
     }
+    
     
     /**************** 扩展方法 ****************/
     
@@ -73,6 +74,7 @@ public extension UIView {
     /// - parameter scrollView: 关联的滚动视图
     /// - parameter rate:       视差比例，提供 -2 ~ 2范围缩放
     public func ch_addParallax(by scrollView: UIScrollView, rate: CGFloat = 1) {
+        self.ch_controller()?.view.layoutIfNeeded()
         //记录原来固定的宽高值
         self.ch_fixFrame = self.frame
         self.ch_scrollView = scrollView
@@ -98,7 +100,7 @@ public extension UIView {
     }
     
     /// 监听回调
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let keyPath = keyPath, keyPath == "contentOffset" {
             let scrollView = object as! UIScrollView
             self.ch_parallaxForScrollViewOffset(offset: scrollView.contentOffset)
@@ -130,14 +132,29 @@ public extension UIView {
         //NSLog("self.ch_fixFrame = \(self.ch_fixFrame)")
     }
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        self.layoutIfNeeded()
+    
+    /// 寻找View所属的controller
+    ///
+    /// - returns:
+    func ch_controller() -> UIViewController? {
+        var father = self.superview
+        while father != nil {
+            if let nextResponder = father?.next, nextResponder is UIViewController {
+                return nextResponder as? UIViewController
+            }
+            father = father?.superview
+        }
+        return nil
     }
+    
+//    open override func awakeFromNib() {
+//        super.awakeFromNib()
+//        self.layoutIfNeeded()
+//    }
 }
 
 // MARK: - 扩展UINavigationBar，增开绑定ScrollView控制导航栏渐变
-public extension UINavigationBar {
+extension UINavigationBar {
     
     /**************** 通过AssociatedKeys的值定义成员变量 ****************/
     
@@ -155,7 +172,7 @@ public extension UINavigationBar {
             objc_setAssociatedObject(
                 self,
                 &AssociatedKeys.ch_overlay,
-                newValue as UIView?,
+                newValue,
                 objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC
             )
         }
@@ -250,14 +267,13 @@ public extension UINavigationBar {
         }
     }
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        self.layoutIfNeeded()
-    }
+//    open override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
 }
 
 
-public extension UIColor {
+extension UIColor {
     
     /**
      把颜色转为图片对象
