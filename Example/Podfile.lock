@@ -1,0 +1,16 @@
+PODS:
+  - CHParallaxHeaderView (0.1.0)
+
+DEPENDENCIES:
+  - CHParallaxHeaderView (from `../`)
+
+EXTERNAL SOURCES:
+  CHParallaxHeaderView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CHParallaxHeaderView: fc55ca2f9991680c2ab3454ac07bcadbe7365599
+
+PODFILE CHECKSUM: fc8f7143a0005fec509b0d61dd03fcd12bcaa635
+
+COCOAPODS: 1.1.0.rc.2

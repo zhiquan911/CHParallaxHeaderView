@@ -1,0 +1,6 @@
+framework module Pods_CHParallaxHeaderView_Example {
+  umbrella header "Pods-CHParallaxHeaderView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

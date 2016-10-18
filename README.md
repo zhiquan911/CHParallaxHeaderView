@@ -22,7 +22,7 @@ pod "CHParallaxHeaderView"
 
 ## Author
 
-麦志泉, zhiquan911@qq.com
+Chance, zhiquan911@qq.com
 
 ## License
 

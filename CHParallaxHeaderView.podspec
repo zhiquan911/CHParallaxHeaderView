@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CHParallaxHeaderView'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of CHParallaxHeaderView.'
+  s.version          = '1.0.0'
+  s.summary          = '使用Swfit扩展为UIView添加随UIScrollView滚动产生视差效果'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+使用Swfit扩展为UIView添加随UIScrollView滚动产生视差效果，实现了UINavigationBar滚动UIScrollView时渐变，UIView随UIScrollView滚动缩放
                        DESC
 
   s.homepage         = 'https://github.com/<GITHUB_USERNAME>/CHParallaxHeaderView'

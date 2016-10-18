@@ -1,0 +1,22 @@
+{
+  "name": "CHParallaxHeaderView",
+  "version": "0.1.0",
+  "summary": "A short description of CHParallaxHeaderView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/CHParallaxHeaderView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "麦志泉": "zhiquan911@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/CHParallaxHeaderView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CHParallaxHeaderView/Classes/**/*"
+}
