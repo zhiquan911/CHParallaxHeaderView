@@ -1,42 +1,25 @@
-#
-# Be sure to run `pod lib lint CHParallaxHeaderView.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
+
 
 Pod::Spec.new do |s|
   s.name             = 'CHParallaxHeaderView'
   s.version          = '1.0.0'
   s.summary          = '使用Swfit扩展为UIView添加随UIScrollView滚动产生视差效果'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
 使用Swfit扩展为UIView添加随UIScrollView滚动产生视差效果，实现了UINavigationBar滚动UIScrollView时渐变，UIView随UIScrollView滚动缩放
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/CHParallaxHeaderView'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/zhiquan911/CHParallaxHeaderView'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '麦志泉' => 'zhiquan911@qq.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/CHParallaxHeaderView.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Chance' => 'zhiquan911@qq.com' }
+  s.source           = { :git => 'https://github.com/zhiquan911/CHParallaxHeaderView.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'CHParallaxHeaderView/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'CHParallaxHeaderView' => ['CHParallaxHeaderView/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
+
+
+#验证命令：pod lib lint CHParallaxHeaderView.podspec --verbose
+#提交命令：pod trunk push CHParallaxHeaderView.podspec

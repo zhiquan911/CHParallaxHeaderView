@@ -30,7 +30,7 @@ class DemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //添加缩放视差效果并跟踪着哪个View
         self.imageViewHeader.ch_addParallax(by: self.tableView)
-        self.imageViewLogo.ch_addParallax(by: self.tableView, rate: 0.5)
+//        self.imageViewLogo.ch_addParallax(by: self.tableView, rate: 0.5)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,7 +39,7 @@ class DemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //当控制器是消失时，把绑定的跟踪移除
         self.navigationController?.navigationBar.ch_removeGradient()
         self.imageViewHeader.ch_removeParallax()
-        self.imageViewLogo.ch_removeParallax()
+//        self.imageViewLogo.ch_removeParallax()
     }
 
     override func didReceiveMemoryWarning() {
