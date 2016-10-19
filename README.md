@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/CHParallaxHeaderView.svg?style=flat)](http://cocoapods.org/pods/CHParallaxHeaderView)
 [![Platform](https://img.shields.io/cocoapods/p/CHParallaxHeaderView.svg?style=flat)](http://cocoapods.org/pods/CHParallaxHeaderView)
 
+![demo.gif](https://github.com/zhiquan911/CHParallaxHeaderView/blob/master/demo.gif)
+
 ## Features
 
 - 使用Swift扩展特性编写，调用简单
