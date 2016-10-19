@@ -15,7 +15,6 @@ class DemoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.layoutIfNeeded()
         self.navigationItem.title = "视差缩放View"
     }
 
@@ -31,6 +30,8 @@ class DemoTableViewController: UITableViewController {
         self.imageViewHeader.ch_removeParallax()
         self.imageViewLogo.ch_removeParallax()
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -100,3 +101,5 @@ class DemoTableViewController: UITableViewController {
     */
 
 }
+
+
