@@ -96,7 +96,9 @@ extension UIView {
     }
     
     public func ch_removeParallax() {
-        self.ch_scrollView?.removeObserver(self, forKeyPath: "contentOffset")
+        if let scrollView = self.ch_scrollView {
+            scrollView.removeObserver(self, forKeyPath: "contentOffset")
+        }
     }
     
     /// 监听回调
@@ -208,7 +210,9 @@ extension UINavigationBar {
     
     /// 重置bar背景颜色
     public func ch_removeGradient() {
-        self.ch_scrollView?.removeObserver(self, forKeyPath: "contentOffset")
+        if let scrollView = self.ch_scrollView {
+            scrollView.removeObserver(self, forKeyPath: "contentOffset")
+        }
         self.ch_removeBackgroundColor()
     }
     
