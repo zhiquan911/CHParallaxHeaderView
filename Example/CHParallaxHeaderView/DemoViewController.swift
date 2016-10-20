@@ -18,7 +18,7 @@ class DemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.layoutIfNeeded()
+        self.view.layoutIfNeeded()
         self.navigationItem.title = "渐变NavBar"
     }
     

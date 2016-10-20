@@ -77,7 +77,6 @@ extension UIView {
         self.ch_controller()?.view.layoutIfNeeded()
         //记录原来固定的宽高值
         self.ch_fixFrame = self.frame
-        self.ch_scrollView = scrollView
         
         if rate > 2 {
             self.ch_parallaxRate = 2
@@ -88,16 +87,20 @@ extension UIView {
         }
         
         
-        //添加监听
-        scrollView.addObserver(self,
-                               forKeyPath: "contentOffset",
-                               options: [.new, .old],
-                               context: nil)
+        if self.ch_scrollView == nil {
+            //添加监听
+            self.ch_scrollView = scrollView
+            scrollView.addObserver(self,
+                                   forKeyPath: "contentOffset",
+                                   options: [.new, .old],
+                                   context: nil)
+        }
     }
     
     public func ch_removeParallax() {
         if let scrollView = self.ch_scrollView {
             scrollView.removeObserver(self, forKeyPath: "contentOffset")
+            self.ch_scrollView = nil
         }
     }
     
@@ -107,6 +110,7 @@ extension UIView {
             let scrollView = object as! UIScrollView
             self.ch_parallaxForScrollViewOffset(offset: scrollView.contentOffset)
         }
+        
     }
     
     
@@ -186,13 +190,16 @@ extension UINavigationBar {
     
     public func ch_addGradient(by scrollView: UIScrollView, barColor: UIColor) {
         self.barTintColor = barColor
-        self.ch_scrollView = scrollView
         
-        //添加监听
-        scrollView.addObserver(self,
-                               forKeyPath: "contentOffset",
-                               options: [.new, .old],
-                               context: nil)
+        if self.ch_scrollView == nil {
+            //添加监听
+            self.ch_scrollView = scrollView
+            scrollView.addObserver(self,
+                                   forKeyPath: "contentOffset",
+                                   options: [.new, .old],
+                                   context: nil)
+        }
+        
         //马上滚动一下
         scrollView.contentOffset.y = scrollView.contentOffset.y
         
@@ -212,6 +219,7 @@ extension UINavigationBar {
     public func ch_removeGradient() {
         if let scrollView = self.ch_scrollView {
             scrollView.removeObserver(self, forKeyPath: "contentOffset")
+            self.ch_scrollView = nil
         }
         self.ch_removeBackgroundColor()
     }
