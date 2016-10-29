@@ -9,13 +9,13 @@
         <!--Demo Table View Controller-->
         <scene sceneID="69D-Be-LrA">
             <objects>
-                <tableViewController id="P6B-LX-jYY" customClass="DemoTableViewController" customModule="CHParallaxHeaderView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DemoTableViewController" id="P6B-LX-jYY" customClass="DemoTableViewController" customModule="CHParallaxHeaderView_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dwC-ve-0NH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="H3z-yy-Iz7" userLabel="headerView">
-                            <rect key="frame" x="0.0" y="64" width="375" height="160"/>
+                            <rect key="frame" x="0.0" y="64" width="414" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple_watch2" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-3d-HCj"/>
@@ -38,10 +38,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="A5h-Kq-Uyh">
-                                <rect key="frame" x="0.0" y="252" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="252" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A5h-Kq-Uyh" id="pYx-Ye-cnL">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -61,6 +61,66 @@
             </objects>
             <point key="canvasLocation" x="2745" y="-153"/>
         </scene>
+        <!--Demo Web View Controller-->
+        <scene sceneID="AG6-mV-8Yc">
+            <objects>
+                <viewController storyboardIdentifier="DemoWebViewController" automaticallyAdjustsScrollViewInsets="NO" id="bL0-Gt-t3A" customClass="DemoWebViewController" customModule="CHParallaxHeaderView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ldY-gD-rm4"/>
+                        <viewControllerLayoutGuide type="bottom" id="zli-Xc-bm0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vh2-fz-jzW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-ge-aY1">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bL0-Gt-t3A" id="9Ud-n7-OVX"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zli-Xc-bm0" firstAttribute="top" secondItem="YNd-ge-aY1" secondAttribute="bottom" id="95z-kH-Z0f"/>
+                            <constraint firstItem="YNd-ge-aY1" firstAttribute="leading" secondItem="vh2-fz-jzW" secondAttribute="leading" id="H7y-uW-gpL"/>
+                            <constraint firstItem="YNd-ge-aY1" firstAttribute="top" secondItem="ldY-gD-rm4" secondAttribute="bottom" constant="-64" id="TAy-HX-oyw"/>
+                            <constraint firstAttribute="trailing" secondItem="YNd-ge-aY1" secondAttribute="trailing" id="Ywg-b4-9Wk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerView" destination="Hvh-sz-oM8" id="JWB-ZI-kPl"/>
+                        <outlet property="imageViewHeader" destination="QBB-L8-q7B" id="sWf-Ce-GlO"/>
+                        <outlet property="imageViewLogo" destination="85z-Ws-SJS" id="QXk-f0-uzY"/>
+                        <outlet property="webView" destination="YNd-ge-aY1" id="zwJ-dX-VEH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8c-Eb-0Ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Hvh-sz-oM8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple_watch2" translatesAutoresizingMaskIntoConstraints="NO" id="QBB-L8-q7B"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="85z-Ws-SJS">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="kFT-1t-fRb"/>
+                                <constraint firstAttribute="width" constant="64" id="twd-UP-jJO"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="QBB-L8-q7B" firstAttribute="top" secondItem="Hvh-sz-oM8" secondAttribute="top" id="K8F-ET-yLs"/>
+                        <constraint firstAttribute="bottom" secondItem="QBB-L8-q7B" secondAttribute="bottom" id="Ugz-jf-Dx2"/>
+                        <constraint firstAttribute="bottom" secondItem="85z-Ws-SJS" secondAttribute="bottom" constant="20" id="YzG-Ht-Hsh"/>
+                        <constraint firstAttribute="trailing" secondItem="QBB-L8-q7B" secondAttribute="trailing" id="cNi-8c-aDr"/>
+                        <constraint firstItem="85z-Ws-SJS" firstAttribute="centerX" secondItem="Hvh-sz-oM8" secondAttribute="centerX" id="syd-7w-nhd"/>
+                        <constraint firstItem="QBB-L8-q7B" firstAttribute="leading" secondItem="Hvh-sz-oM8" secondAttribute="leading" id="ux0-BY-ARK"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="2742.0289855072465" y="719.02173913043487"/>
+        </scene>
         <!--Demo View Controller-->
         <scene sceneID="hvI-zI-zua">
             <objects>
@@ -70,13 +130,13 @@
                         <viewControllerLayoutGuide type="bottom" id="Ia5-GH-m1k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MiC-oN-ceq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8tZ-tI-mxQ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="WyF-Nn-9wA" userLabel="headerView">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple_watch2" translatesAutoresizingMaskIntoConstraints="NO" id="RpW-Sn-eac"/>
@@ -99,15 +159,12 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="wim-ne-OHw">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="188" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wim-ne-OHw" id="QS7-8m-AIP">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="P6B-LX-jYY" kind="show" id="C41-31-Fhw"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -130,6 +187,8 @@
                         <outlet property="imageViewLogo" destination="96o-5J-JN6" id="uw5-IU-WwB"/>
                         <outlet property="tableView" destination="8tZ-tI-mxQ" id="tK4-By-rFG"/>
                         <outlet property="userHeaderView" destination="WyF-Nn-9wA" id="OPM-Ni-7A4"/>
+                        <segue destination="P6B-LX-jYY" kind="show" id="YaK-B2-t7w"/>
+                        <segue destination="bL0-Gt-t3A" kind="show" id="Y4l-uG-vs0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vwr-j9-dcL" userLabel="First Responder" sceneMemberID="firstResponder"/>

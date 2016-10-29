@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CHParallaxHeaderView'
-  s.version          = '1.0.2'
+  s.version          = '1.1.0'
   s.summary          = '使用Swfit扩展为UIView添加随UIScrollView滚动产生视差效果'
 
   s.description      = <<-DESC

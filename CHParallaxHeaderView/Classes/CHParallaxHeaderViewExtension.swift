@@ -153,10 +153,10 @@ extension UIView {
         return nil
     }
     
-//    open override func awakeFromNib() {
-//        super.awakeFromNib()
-//        self.layoutIfNeeded()
-//    }
+    //    open override func awakeFromNib() {
+    //        super.awakeFromNib()
+    //        self.layoutIfNeeded()
+    //    }
 }
 
 // MARK: - 扩展UINavigationBar，增开绑定ScrollView控制导航栏渐变
@@ -279,12 +279,71 @@ extension UINavigationBar {
         }
     }
     
-//    open override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
+    //    open override func awakeFromNib() {
+    //        super.awakeFromNib()
+    //    }
 }
 
 
+// MARK: - 扩展webView
+extension UIWebView {
+    
+    
+    /// 扩展为webview添加headerView
+    ///
+    /// - parameter headerView:
+    public func ch_addHeaderView(headerView: UIView) {
+        
+        self.layoutIfNeeded()   //重新计算布局尺寸
+        
+        var headerView = headerView
+        let height = headerView.frame.size.height
+        let browserCanvas = self.bounds
+        //print("self.scrollView.subviews = \(self.scrollView.subviews.count)")
+        for subView in self.scrollView.subviews {
+            var subViewRect = subView.frame
+//            if(subViewRect.origin.x == browserCanvas.origin.x &&
+//                subViewRect.origin.y == browserCanvas.origin.y &&
+//                subViewRect.size.width == browserCanvas.size.width &&
+//                subViewRect.size.height == browserCanvas.size.height)
+//            {
+            
+                subViewRect.origin.y    = height
+                subViewRect.size.height -= height
+                subView.frame           = subViewRect
+//            }
+        }
+        
+        
+        
+        self.scrollView.addSubview(headerView)
+        self.scrollView.bringSubview(toFront: headerView)
+        
+        //添加约束
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //高度宽度保持与webView的一致
+        self.scrollView.addConstraints(
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|[headerView(\(browserCanvas.size.width))]|",
+                options: NSLayoutFormatOptions(),
+                metrics: nil,
+                views:["headerView": headerView]))
+        
+        self.scrollView.addConstraints(
+            NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|[headerView(\(height))]",
+                options: NSLayoutFormatOptions(),
+                metrics: nil,
+                views:["headerView": headerView]))
+        
+
+    }
+    
+}
+
+
+// MARK: - 颜色类扩展
 extension UIColor {
     
     /**
