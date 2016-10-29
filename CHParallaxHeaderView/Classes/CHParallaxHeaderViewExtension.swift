@@ -296,7 +296,6 @@ extension UIWebView {
         
         self.layoutIfNeeded()   //重新计算布局尺寸
         
-        var headerView = headerView
         let height = headerView.frame.size.height
         let browserCanvas = self.bounds
         //print("self.scrollView.subviews = \(self.scrollView.subviews.count)")
